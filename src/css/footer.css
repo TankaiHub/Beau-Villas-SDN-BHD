@@ -1,0 +1,17 @@
+.footer-container{
+    margin-top:50px;
+}
+.footer {
+    margin-bottom: 0;
+    position: relative;
+    padding: 60px 0 50px;
+    background-color: #111;
+}
+.footer .wrap {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+.footer .wrap .copy a {
+    color: #555;
+}

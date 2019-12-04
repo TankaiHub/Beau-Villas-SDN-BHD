@@ -1,0 +1,34 @@
+.section.sub-page.qiye{
+    margin-top:140px;
+}
+.section.sub-page.qiye .mobanvip{
+    padding-top:20px;
+    padding-bottom:160px;
+    background-color:#fff;
+    
+}
+.section.sub-page.qiye .mobanvip .loading{
+    width:100%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+@media screen and (max-width:768px)  {
+    .section.sub-page.qiye{
+        margin-top:60px;
+    }
+} 
+@media screen and (max-width:768px){
+    .en .section.sub-page.qiye .page-nav.no-touch .wrap{
+        left:0;
+        width: 100%;
+        padding:0;
+        margin:0;
+        text-align: center;
+    }
+    .en .section.sub-page.qiye .page-nav.no-touch .wrap a{
+        padding:0 4px;
+    }   
+   
+}

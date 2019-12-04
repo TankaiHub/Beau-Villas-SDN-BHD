@@ -1,0 +1,14 @@
+/* section */
+.section{
+    padding-top:270px;
+}
+@media screen and (min-width: 1024px){
+    .section.sub-page{
+        margin-top:140px;
+    }
+}
+@media screen and (max-width: 1024px){
+    .section.sub-page{
+        margin-top:60px;
+    }
+}

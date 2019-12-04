@@ -1,0 +1,18 @@
+.section.sub-page.apar{
+    margin-top:140px;
+}
+.section.sub-page.apar .mobanvip{
+    background-color:#fff;
+    padding-top:20px;
+}
+.section.sub-page.apar .mobanvip .loading{
+    width:100%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+@media screen and (max-width:768px)  {
+    .section.sub-page.apar{
+        margin-top:60px;
+    }
+}

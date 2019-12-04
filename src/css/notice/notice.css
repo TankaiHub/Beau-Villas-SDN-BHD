@@ -1,0 +1,65 @@
+.section.sub-page.notice{
+    margin-top:140px;
+}
+.section.sub-page.notice .mobanvip{
+    background:#fff;
+    padding:10px 0 150px;
+}
+.section.sub-page.notice .hot-zx{ 
+    border:none;
+}
+.section.sub-page.notice .not-desc{
+    position: relative;
+    display: block;
+    font-size: 18px;  
+    width:50%;
+    margin:0 auto;
+    text-align: center; 
+}
+.section.sub-page.notice .mobanvip .not-desc::before,
+.section.sub-page.notice .mobanvip .not-desc::after{
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 1px;
+    top: 50%;
+    margin-top: -0.5px;
+    background-image: none;
+    background-color: #d4d4d4;
+    opacity: 0.5;
+}
+.noticeR.row{
+    width:90%;
+    margin:0 auto;
+}
+.section.sub-page.notice .mobanvip .not-desc:after {
+    left: 110%;
+}
+.section.sub-page.notice .mobanvip .not-desc::before {
+    right: 110%;
+}
+@media screen and (max-width:1024px) {
+    .section.sub-page.notice .not-desc{
+        font-size: 14px;
+    }
+    .section.sub-page.notice{
+        margin-top:60px;
+    }
+}
+.banner-container{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding-top:35%;
+    z-index:-1;
+    transform: translate3d(0, 0, 0);
+}
+.banner-container img{
+    position: absolute;
+    top:50px;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+} 

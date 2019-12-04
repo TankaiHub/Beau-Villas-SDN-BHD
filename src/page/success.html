@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提示信息</title>
+    <link rel="stylesheet" href="../css/reset/reset.css">
+    <style>
+        .success-wrapper {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            padding: 20px 10px;
+            width: 80%;
+            border: 1px solid rgb(185, 230, 185);
+            background: rgb(238, 249, 238);
+        }
+
+        .success-wrapper .success-ioc {
+            width: 50px;
+            height: 50px;
+            background: url('../images/bg_right.gif');
+            background-size: 100% 100%;
+        }
+
+        .success-wrapper .suc-text {
+            padding-left: 30px;
+        }
+
+        .success-wrapper .suc-text p {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgb(62, 142, 67);
+        }
+
+        .success-wrapper .suc-text span {
+            line-height: 30px;
+            color: rgb(62, 142, 67);
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .success-wrapper .suc-text span:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="success-wrapper">
+        <div class="success-ioc"></div>
+        <div class="suc-text">
+            <p data-lang='string_suc'>提交成功</p>
+            <span onclick="toBack" data-lang='string_err-text'>如果您的浏览器没有自动跳转，请点击这里</span>
+        </div>
+    </div>
+    <script src="../js/tools/jquery-1.9.2.min.js"></script>
+    <script src="../../js/tools/jQuery.i18n.properties.js"></script>
+    <script src="../../js/i18n.js"></script>
+    <script>
+        (function () {
+            let timer = null;
+            function toBack() {
+                clearTimeout(timer);
+                window.history.go(-1);
+            }
+            timer = setTimeout(() => {
+                window.history.go(-1);
+            }, 1500);
+        })()
+    </script>
+ 
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提示信息</title>
+    <link rel="stylesheet" href="../../css/reset/reset.css">
+    <style>
+        .error-wrapper {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            padding: 20px 10px;
+            width: 80%;
+            border: 1px solid rgb(253, 189, 120);
+            background: rgb(255 253 251);
+        }
+
+        .error-wrapper .error-ioc {
+            width: 60px;
+            height: 60px;
+            background: url('../../images/bg_wrong.gif');
+            background-size: 100% 100%;
+        }
+
+        .error-wrapper .error-msg {
+            padding-left: 30px;
+            color: rgb(255, 89, 1)
+        }
+
+        .error-wrapper .error-msg .msg {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .error-wrapper .error-msg span {
+            font-size: 12px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .error-wrapper .error-msg span:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-wrapper">
+        <div class="error-ioc"></div>
+        <div class="error-msg">
+            <div class="msg"></div>
+            <span class='onclickbtn' data-lang='string_err-text'>如果您的浏览器没有自动跳转，请点击这里</span>
+        </div>
+    </div>
+    <script src="../../js/tools/jquery-1.9.2.min.js"></script>
+    <script src="../../js/tools/jQuery.i18n.properties.js"></script>
+    <script src="../../js/i18n.js"></script>
+    <script>
+        (function () {
+            let searchStr = window.location.search.slice('1');
+            let obj = {};
+            let arr = searchStr.split('&');
+            let searchLen = arr.length;
+            for (let i = 0; i < searchLen; i++) {
+                let temp = arr[i].split('=');
+                obj[temp[0]] = temp[1];
+            }
+            let timer = null;
+            let msg = ['姓名不能为空', '手机号码格式不正确', '建筑面积不能为空', '邮箱格式不正确', '联系地址不能为空'];
+            let root = $('.error-wrapper');
+            root.find('.error-msg .msg').html(`<span data-lang='string_err${obj.index}'>${msg[obj.index]}</span>`);
+            $('.onclickbtn').on('click', function () {
+                clearTimeout(timer);
+                window.history.go(-1);
+            });
+            timer = setTimeout(() => {
+                window.history.go(-1);
+            }, 1500);
+        })();
+    </script>
+</body>
+
+</html>
